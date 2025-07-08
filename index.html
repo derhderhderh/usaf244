@@ -6,11 +6,11 @@
     <title>ATC24 | US Airforce</title>
     <meta name="description" content="Experience authentic military aviation roleplay with professional air traffic control, realistic operations, and a dedicated community of aviation enthusiasts.">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
-        /* Ensure Tailwind loads and add fallback styles */
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -18,14 +18,14 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
         }
         
         .hero-gradient {
@@ -37,67 +37,85 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
-            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            font-size: 1rem;
         }
         
         .btn-primary {
             background-color: #2563eb;
             color: white;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
         }
         
         .btn-primary:hover {
             background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px 0 rgba(37, 99, 235, 0.5);
         }
         
         .btn-outline {
             background-color: transparent;
             color: white;
-            border: 1px solid white;
+            border: 2px solid white;
         }
         
         .btn-outline:hover {
             background-color: white;
             color: #0f172a;
+            transform: translateY(-2px);
         }
         
         .card {
             background: white;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            text-align: center;
         }
         
         .card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         .header {
             background-color: #0f172a;
             color: white;
-            padding: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #374151;
+        }
+        
+        .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #374151;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.25rem;
         }
         
         .nav {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .nav a {
             color: white;
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
         
         .nav a:hover {
@@ -105,24 +123,29 @@
         }
         
         .section {
-            padding: 3rem 0;
+            padding: 5rem 0;
         }
         
         .section-alt {
-            background-color: #f9fafb;
+            background-color: #f8fafc;
+        }
+        
+        .section-dark {
+            background-color: #0f172a;
+            color: white;
         }
         
         .grid {
             display: grid;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         }
         
         .grid-3 {
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         }
         
         .text-center {
@@ -134,12 +157,7 @@
         }
         
         .text-gray {
-            color: #6b7280;
-        }
-        
-        .bg-dark {
-            background-color: #0f172a;
-            color: white;
+            color: #64748b;
         }
         
         .bg-slate {
@@ -147,14 +165,15 @@
         }
         
         .rounded {
-            border-radius: 0.5rem;
+            border-radius: 0.75rem;
         }
         
         .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-6 { margin-bottom: 2rem; }
+        .mb-8 { margin-bottom: 3rem; }
         .mt-4 { margin-top: 1rem; }
         .p-4 { padding: 1rem; }
-        .p-6 { padding: 1.5rem; }
+        .p-6 { padding: 2rem; }
         .px-4 { padding-left: 1rem; padding-right: 1rem; }
         .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
         
@@ -178,12 +197,22 @@
             gap: 1rem;
         }
         
+        .gap-6 {
+            gap: 1.5rem;
+        }
+        
         .w-full {
             width: 100%;
         }
         
         .max-w-4xl {
             max-width: 56rem;
+            margin: 0 auto;
+        }
+        
+        .max-w-6xl {
+            max-width: 72rem;
+            margin: 0 auto;
         }
         
         .relative {
@@ -195,46 +224,51 @@
         }
         
         .badge {
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
             font-size: 0.875rem;
-            font-weight: 500;
+            font-weight: 600;
             display: inline-block;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .step-number {
             position: absolute;
-            top: -12px;
-            left: -12px;
-            width: 32px;
-            height: 32px;
+            top: -15px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 0.875rem;
+            font-weight: 800;
+            font-size: 1rem;
             color: white;
         }
         
-        .step-1 { background-color: #2563eb; }
-        .step-2 { background-color: #16a34a; }
+        .step-1 { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+        .step-2 { background: linear-gradient(135deg, #16a34a, #22c55e); }
         
         .notice {
-            background-color: rgba(30, 58, 138, 0.2);
-            border: 1px solid rgba(37, 99, 235, 0.3);
-            border-radius: 0.5rem;
-            padding: 1rem;
-            margin: 1.5rem 0;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(37, 99, 235, 0.1));
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
         }
         
         .footer {
-            background-color: #f3f4f6;
-            padding: 1.5rem;
-            border-top: 1px solid #e5e7eb;
+            background-color: #f1f5f9;
+            padding: 2rem 0;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -244,47 +278,89 @@
         
         .footer-nav {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .footer-nav a {
-            color: #6b7280;
+            color: #64748b;
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
         
         .footer-nav a:hover {
-            text-decoration: underline;
+            color: #2563eb;
         }
         
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 0.75rem;
+            border-radius: 1rem;
         }
         
+        /* Enhanced Typography */
         h1 {
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 4rem;
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
         }
         
         h2 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #1e293b;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            border-radius: 2px;
+        }
+        
+        .section-dark h2 {
+            color: white;
         }
         
         h3 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .card h3 {
+            text-align: center;
         }
         
         p {
             margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 500;
             line-height: 1.6;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
         }
         
         .icon {
@@ -295,8 +371,78 @@
         }
         
         .icon-lg {
-            width: 32px;
-            height: 32px;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1.5rem auto;
+            display: block;
+        }
+        
+        /* Hero specific styles */
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .hero-image {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        /* About section specific */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            text-align: left;
+        }
+        
+        /* Features grid enhancement */
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Join section cards */
+        .join-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .join-card {
+            background: #1e293b;
+            border: 1px solid #475569;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            text-align: center;
+        }
+        
+        .join-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .join-card p {
+            color: #cbd5e1;
+            margin-bottom: 2rem;
         }
         
         @media (max-width: 768px) {
@@ -304,7 +450,7 @@
                 padding: 0 1rem;
             }
             
-            .header {
+            .header-content {
                 flex-direction: column;
                 gap: 1rem;
             }
@@ -314,7 +460,7 @@
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             h2 {
@@ -325,9 +471,32 @@
                 grid-template-columns: 1fr;
             }
             
-            .footer {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-content {
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            .join-cards {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -335,54 +504,56 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="flex items-center">
-            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-            </svg>
-            <span style="margin-left: 0.5rem; font-weight: bold; font-size: 1.125rem;">ATC24 US Airforce</span>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="margin-right: 0.75rem;">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                    ATC24 US Airforce
+                </div>
+                <nav class="nav">
+                    <a href="#about">About</a>
+                    <a href="#features">Features</a>
+                    <a href="#join">Join Us</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
         </div>
-        <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#join">Join Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-gradient section" style="padding: 6rem 0;">
+        <section class="hero-gradient section">
             <div class="container">
-                <div class="grid grid-2" style="align-items: center;">
-                    <div>
-                        <span class="badge">Elite Military Roleplay</span>
-                        <h1>ATC24 US Airforce</h1>
-                        <p style="color: #d1d5db; font-size: 1.125rem; margin-bottom: 2rem;">
-                            Experience authentic military aviation roleplay with professional air traffic control, realistic
-                            operations, and a dedicated community of aviation enthusiasts.
-                        </p>
-                        <div class="flex gap-4" style="flex-wrap: wrap;">
-                            <button class="btn btn-primary">
-                                Join Server
-                                <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </button>
-                            <a href="https://careers.usaf24.com" target="_blank" class="btn btn-outline">
-                                View Careers
-                                <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </a>
-                        </div>
+                <div class="hero-content">
+                    <span class="badge">Elite Military Roleplay</span>
+                    <h1>ATC24 US Airforce</h1>
+                    <p class="lead" style="color: #e2e8f0;">
+                        Experience authentic military aviation roleplay with professional air traffic control, realistic
+                        operations, and a dedicated community of aviation enthusiasts.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            Join Server
+                            <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <a href="https://careers.usaf24.com" target="_blank" class="btn btn-outline">
+                            View Careers
+                            <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
                     </div>
-                    <div class="text-center">
-                        <img
-                            alt="ATC24 Fighter Aircraft"
-                            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_49-e0I0PdJTKkIA2kdubb82zHQYIsr0fm.png"
-                            style="max-width: 600px; width: 100%;"
-                        />
-                    </div>
+                </div>
+                <div class="hero-image">
+                    <img
+                        alt="ATC24 Fighter Aircraft"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_49-e0I0PdJTKkIA2kdubb82zHQYIsr0fm.png"
+                        style="max-width: 700px; width: 100%;"
+                    />
                 </div>
             </div>
         </section>
@@ -390,24 +561,23 @@
         <!-- About Section -->
         <section id="about" class="section section-alt">
             <div class="container">
-                <div class="text-center mb-6">
+                <div class="text-center mb-8">
                     <h2>About ATC24 - USAF</h2>
-                    <p class="text-gray" style="max-width: 900px; margin: 0 auto; font-size: 1.125rem;">
+                    <p class="lead text-gray">
                         ATC24 US Airforce is a specialized military aviation department within the larger ATC24 community. We
-                        focus on providing the most realistic and immersive US Air Force roleplay experience, bringing
-                        together aviation enthusiasts, military personnel, and simulation pilots from around the world.
+                        focus on providing the most realistic and immersive US Air Force roleplay experience.
                     </p>
                 </div>
-                <div class="grid grid-2" style="align-items: center; max-width: 1000px; margin: 0 auto;">
+                <div class="about-grid">
                     <div>
                         <img
                             alt="ATC24 Transport Aircraft"
                             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/O3daTzP-V5RB1WNHwyTOnL4iis0YWMDYzLyQUL.png"
-                            style="max-width: 550px; width: 100%;"
+                            style="max-width: 100%; width: 100%;"
                         />
                     </div>
-                    <div>
-                        <div class="mb-4">
+                    <div class="about-content">
+                        <div class="mb-6">
                             <h3>Professional Operations</h3>
                             <p class="text-gray">
                                 Experience military-grade operations with authentic procedures, realistic air traffic control, and
@@ -429,15 +599,15 @@
         <!-- Features Section -->
         <section id="features" class="section">
             <div class="container">
-                <div class="text-center mb-6">
+                <div class="text-center mb-8">
                     <h2>Server Features</h2>
-                    <p class="text-gray" style="max-width: 900px; margin: 0 auto; font-size: 1.125rem;">
+                    <p class="lead text-gray">
                         Discover what makes ATC24 the premier destination for military aviation roleplay
                     </p>
                 </div>
-                <div class="grid grid-3" style="max-width: 1000px; margin: 0 auto;">
+                <div class="grid grid-3 features-grid">
                     <div class="card">
-                        <svg class="icon-lg text-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-lg text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
                         </svg>
                         <h3>Professional ATC</h3>
@@ -447,7 +617,7 @@
                         </p>
                     </div>
                     <div class="card">
-                        <svg class="icon-lg text-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-lg text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
                         <h3>Military Ranks</h3>
@@ -457,7 +627,7 @@
                         </p>
                     </div>
                     <div class="card">
-                        <svg class="icon-lg text-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-lg text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                         </svg>
                         <h3>Diverse Aircraft</h3>
@@ -467,7 +637,7 @@
                         </p>
                     </div>
                     <div class="card">
-                        <svg class="icon-lg text-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-lg text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
                         </svg>
                         <h3>Active Community</h3>
@@ -477,7 +647,7 @@
                         </p>
                     </div>
                     <div class="card">
-                        <svg class="icon-lg text-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-lg text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
                         </svg>
                         <h3>Realistic Missions</h3>
@@ -487,7 +657,7 @@
                         </p>
                     </div>
                     <div class="card">
-                        <svg class="icon-lg text-blue mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="icon-lg text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                         </svg>
                         <h3>Custom Mods</h3>
@@ -501,66 +671,65 @@
         </section>
 
         <!-- Join Section -->
-        <section id="join" class="section bg-dark">
+        <section id="join" class="section section-dark">
             <div class="container">
-                <div class="text-center mb-6">
+                <div class="text-center mb-8">
                     <h2>Ready to Serve?</h2>
-                    <p style="color: #d1d5db; max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
+                    <p class="lead" style="color: #e2e8f0;">
                         Join the ranks of ATC24 US Airforce and experience the most authentic military aviation roleplay
                         available. Follow our verification process to gain access.
                     </p>
                 </div>
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <div class="grid grid-2 mb-6">
-                        <div class="card bg-slate relative" style="color: white; border: 1px solid #475569;">
-                            <div class="step-number step-1">1</div>
-                            <h3 style="color: white;">Join Main ATC24 Discord</h3>
-                            <p style="color: #d1d5db; margin-bottom: 1.5rem;">
-                                First, join the main ATC24 Discord server and complete their verification process. This gives
-                                you access to the broader ATC24 community.
-                            </p>
-                            <a href="https://discord.gg/gZq56qk9c7" target="_blank" class="btn btn-primary w-full">
-                                Join ATC24 Main
-                                <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="card bg-slate relative" style="color: white; border: 1px solid #475569;">
-                            <div class="step-number step-2">2</div>
-                            <h3 style="color: white;">Join US Airforce Department</h3>
-                            <p style="color: #d1d5db; margin-bottom: 1.5rem;">
-                                Once you're verified in the main ATC24 server, join our specialized US Airforce department to
-                                begin your military aviation career.
-                            </p>
-                            <a href="https://discord.gg/PpqUd4qQEr" target="_blank" class="btn w-full" style="background-color: #16a34a; color: white;">
-                                Join US Airforce Dept
-                                <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="notice">
-                        <div class="flex" style="align-items: flex-start; gap: 0.75rem;">
-                            <svg class="icon" style="color: #60a5fa; margin-top: 0.125rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                
+                <div class="join-cards">
+                    <div class="join-card">
+                        <div class="step-number step-1">1</div>
+                        <h3>Join Main ATC24 Discord</h3>
+                        <p>
+                            First, join the main ATC24 Discord server and complete their verification process. This gives
+                            you access to the broader ATC24 community.
+                        </p>
+                        <a href="https://discord.gg/gZq56qk9c7" target="_blank" class="btn btn-primary w-full">
+                            Join ATC24 Main
+                            <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                             </svg>
-                            <div>
-                                <h4 style="color: #60a5fa; font-weight: 600; margin-bottom: 0.25rem;">ATC24 Department</h4>
-                                <p style="color: #d1d5db; font-size: 0.875rem;">
-                                    We are a specialized US Air Force department within the larger ATC24 community. Join the main
-                                    ATC24 server first, then our department for focused military aviation roleplay.
-                                </p>
-                            </div>
+                        </a>
+                    </div>
+                    <div class="join-card">
+                        <div class="step-number step-2">2</div>
+                        <h3>Join US Airforce Department</h3>
+                        <p>
+                            Once you're verified in the main ATC24 server, join our specialized US Airforce department to
+                            begin your military aviation career.
+                        </p>
+                        <a href="https://discord.gg/PpqUd4qQEr" target="_blank" class="btn w-full" style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; font-weight: 600;">
+                            Join US Airforce Dept
+                            <svg class="icon" style="margin-left: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="notice max-w-4xl">
+                    <div class="flex" style="align-items: flex-start; gap: 1rem;">
+                        <svg class="icon" style="color: #60a5fa; margin-top: 0.25rem; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <div>
+                            <h4 style="color: #60a5fa; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem;">ATC24 Department</h4>
+                            <p style="color: #e2e8f0; font-size: 1rem; line-height: 1.6;">
+                                We are a specialized US Air Force department within the larger ATC24 community. Join the main
+                                ATC24 server first, then our department for focused military aviation roleplay.
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="text-center" style="color: #9ca3af; font-size: 0.875rem;">
-                        <p>Main ATC24: discord.gg/gZq56qk9c7 | US Airforce Dept: discord.gg/PpqUd4qQEr</p>
-                        <p style="font-size: 0.75rem; margin-top: 0.25rem;">Game server details provided after verification in both servers</p>
-                    </div>
+                <div class="text-center" style="color: #94a3b8; font-size: 0.95rem;">
+                    <p style="margin-bottom: 0.5rem;">Main ATC24: discord.gg/gZq56qk9c7 | US Airforce Dept: discord.gg/PpqUd4qQEr</p>
+                    <p style="font-size: 0.85rem; opacity: 0.8;">Game server details provided after verification in both servers</p>
                 </div>
             </div>
         </section>
@@ -568,14 +737,18 @@
 
     <!-- Footer -->
     <footer id="contact" class="footer">
-        <p style="color: #6b7280; font-size: 0.75rem;">© 2024 ATC24 US Airforce Roleplay Server. All rights reserved.</p>
-        <nav class="footer-nav">
-            <a href="#">Rules</a>
-            <a href="#">Forums</a>
-            <a href="#">Support</a>
-            <a href="#">Privacy</a>
-        </nav>
-    </footer>
+        <div class="container">
+            <div class="footer-content">
+                <p style="color: #64748b; font-size: 0.875rem; font-weight: 500;">© 2024 ATC24 US Airforce Roleplay Server. All rights reserved.</p>
+                <nav class="footer-nav">
+                    <a href="#">Rules</a>
+                    <a href="#">Forums</a>
+                    <a href="#">Support</a>
+                    <a href="#">Privacy</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <script>
         // Smooth scrolling for navigation links
